@@ -6,7 +6,7 @@ To install, read INSTALLING and follow the instructions
 
 # Contributing
 
-If you'd like to contribute, first fork the project, put you edits in it, then make a pull request and I will review it, and most likely accept the change.
+If you'd like to contribute, first fork/clone the project, put you edits in it, then make a pull request and I will review it, and most likely accept the change.
 
 # Support
 
