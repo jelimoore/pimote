@@ -21,7 +21,7 @@ Now reboot again.
 After everything boots up, run "irsend SEND_ONCE (device) (a key you used in irrecord)". This is case-sensitive. Your device should respond, if not, either you didn't follow the steps coorectly or your IR LED isn't wired up coorectly.
 If it does happen to work, continue onto the next step.
 
-Now run "./template CREATE TV". This will give you a TV controller web template. You can use templates for DVD STEREO and SETTOP
-If you want a challenge, use the MACRO option. This is a scripting-type thing for action, i.e. "Watch TV" will power on the TV, stereo, set-top box, turn the set-top to your favorite channel, and set the TV to accept input from whatever input the set-top box is on.
+Now copy the templates in the templates folder to your /var/www and edit them.
+If you want to take this to the next level, you can edit the macro.php file. This is a scripting-type thing for action, i.e. "Watch TV" will power on the TV, stereo, set-top box, turn the set-top to your favorite channel, and set the TV to accept input from whatever input the set-top box is on.
 Edit the templates to use your own button names and what command they correspont to.
 That's it! All you have to do is navagate to your your.i.p.here/tv.php for the TV, stereo.php for the stereo, etc.
