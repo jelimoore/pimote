@@ -45,9 +45,9 @@ ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
 echo "My IP for wlan0 is:"
 ifconfig wlan0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
 
-cp www/css /var/www/css
-cp www/js /var/www/js
-cp www/fonts /var/www/fonts
+cp -R www/css /var/www/css
+cp -R www/js /var/www/js
+cp -R www/fonts /var/www/fonts
 rm /var/www/index.lighttpd.html
 
 read -r -p "Would you like to reboot now? (y/n) " response
