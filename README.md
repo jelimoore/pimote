@@ -1,6 +1,6 @@
 # PiMote
 
-The Raspberry Pi Web-based universal remote. A small project I worked on my summer break.
+The Raspberry Pi Web-based universal remote. Takes advantage of LIRC, PHP, and LigHTTPD
 
 To install, read INSTALLING and follow the instructions
 
