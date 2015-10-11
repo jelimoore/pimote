@@ -5,23 +5,61 @@ A breakout for the RPi's GPIOs
 An IR Receiver like this one: sparkfun.com/products/10266
 An IR LED with resistor, or a high power LED kit like this one: sparkfun.com/products/10732
 A working knowlegde of Linux command-line, PHP and HTML.
-Firstly, flash a new Raspbian image onto an SD card and get SSH or local command access, and bring up Ethernet or WiFi
 
-After that, you can run ./startup.bash as root with sudo ./startup.bash
+Firstly, put the IR LED/IR blaster whatnot on GPIO pin 22 of the Pi. Then put the IR receiver on pin 18.
+
+Then flash a new Raspbian image onto an SD card, get SSH or local command access, and get it on the Internet.
+
+After that, run "sudo ./configure.bash"
 
 After the system has rebooted, run the command "sudo service lirc stop".
-Next, run "mode2 -d /dev/lirc0". Next, aim any remote at the IR receiver and press a couple buttons. LOTS of text should fly by.
+Next, run "mode2 -d /dev/lirc0". Next, aim any remote at the IR receiver and press a couple buttons. It should wordvomit lots of data.
 After that, press control+c to exit mode2.
-Get your remote you want to emulate and run "sudo irrecord -d /dev/lirc0 name_of_remote.conf" replacing name_of_remote with the name of the remote you are emulating.
-Follow all the prompts, and repeat this step for each remote you want to emulate. Now you will have a few .conf's for your remotes.
-Now, run "cat your_remote.conf your_second_remote.conf your_third_remote.conf >> lircd.conf". Replace your_remote, your_second_remote.conf with the actual names of the files you made with irrecord.
-Run "sudo rm /etc/lirc/lircd.conf; cp lircd.conf /etc/lirc/lircd.conf; sudo nano /etc/lirc/lircd.conf". Change the "name" to the device it controls; i.e. if you have a panasonic flat panel TV, the name would be TV, repeat this for each remote. Press control+x then y, then enter/return.
+
+Then get your remote you want to emulate and run "sudo irrecord -d /dev/lirc0 name_of_remote.conf" replacing name_of_remote with the name of the remote you are emulating, i.e. TV, stereo, etc. If you want a very painless setup, use the keybindings below.
+Follow all the prompts, and repeat this step for each remote you want to emulate. Now you will have a few conf's for your remotes.
+Now, run "cat your_remote.conf your_second_remote.conf your_third_remote.conf >> lircd.conf", Replacing your_remote, your_second_remote.conf with the actual names of the files you made with irrecord.
+Run "sudo rm /etc/lirc/lircd.conf; cp lircd.conf /etc/lirc/lircd.conf; sudo nano /etc/lirc/lircd.conf". Change the "name" to the device it controls; i.e. if you have a panasonic TV, the name would be TV, repeat this for each remote. Press ctrl+x then y, then enter/return.
 Now reboot again.
 
-After everything boots up, run "irsend SEND_ONCE (device) (a key you used in irrecord)". This is case-sensitive. Your device should respond, if not, either you didn't follow the steps coorectly or your IR LED isn't wired up coorectly.
-If it does happen to work, continue onto the next step.
+After everything boots up, run "irsend SEND_ONCE (name from lircd.conf) (a key you used in irrecord)". This is case-sensitive. Your device should respond, if not, either you didn't follow the steps coorectly or your IR LED isn't wired up correctly.
+If it does happen to work, you're done-ish. If you need more remotes, duplicate an existing file and make necesary modifications. Else, you're good for testing and permanent installation. Just make sure the IR LED can reach the devices.
 
-Now copy the templates in the templates folder to your /var/www and edit them.
-If you want to take this to the next level, you can edit the macro.php file. This is a scripting-type thing for action, i.e. "Watch TV" will power on the TV, stereo, set-top box, turn the set-top to your favorite channel, and set the TV to accept input from whatever input the set-top box is on.
-Edit the templates to use your own button names and what command they correspont to.
-That's it! All you have to do is navagate to your your.i.p.here/tv.php for the TV, stereo.php for the stereo, etc.
+
+LIRC                    REMOTE
+
+KEY_POWER               Power
+KEY_I                   Input
+KEY_T                   TV
+KEY_A                   A/V or Composite
+KEY_C                   Component
+KEY_H                   HDMI
+KEY_EXIT                Exit
+KEY_UP                  Up
+KEY_DOWN                Down
+KEY_LEFT                Left
+KEY_RIGHT               Right
+KEY_ENTER               Enter/return/select/OK
+KEY_VOLUMEUP            Volume Up
+KEY_VOLUMEDOWN          Volume Down
+KEY_CHANNELUP           Channel Up
+KEY_CHANNELDOWN         Channel Down
+KEY_MUTE                Mute
+KEY_LAST                Last
+KEY_1                   1
+KEY_2                   2
+KEY_3                   3
+KEY_4                   4
+KEY_5                   5
+KEY_6                   6
+KEY_7                   7
+KEY_8                   8
+KEY_9                   9
+KEY_0                   0
+KEY_INFO                Info
+KEY_MINUS               Minus
+KEY_PAUSE               Pause
+KEY_PLAY                Play
+KEY_STOP                Stop
+KEY_G                   Guide
+
