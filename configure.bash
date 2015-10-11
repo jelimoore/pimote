@@ -61,6 +61,7 @@ fi
 chown www-data:www-data /var/www
 chmod 775 /var/www
 usermod -a -G www-data pi
+chmod g+s www
 
 #eth0 ip
 echo "My IP for eth0 is:"
@@ -71,9 +72,7 @@ echo "My IP for wlan0 is:"
 ifconfig wlan0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
 
 #copying CSS, JS and fonts from Bootstrap
-cp -R www/css /var/www/css
-cp -R www/js /var/www/js
-cp -R www/fonts /var/www/fonts
+cp -R www /var/www
 rm /var/www/index.lighttpd.html
 
 #ask to reboot
