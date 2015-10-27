@@ -61,7 +61,7 @@ fi
 chown www-data:www-data /var/www
 chmod 775 /var/www
 usermod -a -G www-data pi
-chmod g+s www
+chmod g+s /var/www
 
 #eth0 ip
 echo "My IP for eth0 is:"
