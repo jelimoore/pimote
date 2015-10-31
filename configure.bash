@@ -31,7 +31,7 @@ else
     echo "Not overclocking."
 fi
 
-#Install LigHTTPD, PHP and enable PHP 
+#Install LigHTTPD, PHP and enable PHP, and install php-apc (caching module)
 apt-get install lighttpd -y
 apt-get install php5-common php5-cgi php5 -y
 lighty-enable-mod fastcgi-php
@@ -58,6 +58,7 @@ else
    echo "Not installing Samba."
 fi
 
+#Netatalk/AFP
 read -r -p "Would you like to install a Netatalk/AFP server? It makes it generously easier to manipulate files. (y/n) " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
@@ -70,7 +71,9 @@ else
    echo "Not installing Netatalk."
 fi
 
-#Permissions for /var/www and Pi so Pi can write to /var/www without changing user
+#Permissions for /var/www and Pi so Pi can write to /var/www without changing user, copying CSS, JS and fonts from Bootstrap
+cp -R www /var/www
+rm /var/www/index.lighttpd.html
 chown -R www-data:www-data /var/www
 chmod 775 -R /var/www
 usermod -a -G www-data pi
