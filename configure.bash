@@ -44,7 +44,7 @@ then
    echo "Installing Samba."
    sudo apt-get install -y samba
    echo "#WWW Root Share" >> /etc/samba/smb.conf
-   echo "[www]" >> /etc/samba/smb.conf
+   echo "[Web Root]" >> /etc/samba/smb.conf
    echo "comment = WWW Directory" >> /etc/samba/smb.conf
    echo "path = /var/www" >> /etc/samba/smb.conf
    echo "guest ok = no" >> /etc/samba/smb.conf
@@ -57,9 +57,21 @@ else
    echo "Not installing Samba."
 fi
 
+read -r -p "Would you like to install a Netatalk/AFP server? It makes it generously easier to manipulate files. (y/n) " response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+   echo "Installing Netatalk."
+   sudo apt-get install -y netatalk
+   echo "/var/www	\"Web Root\"	allow:pi" >> /etc/netatalk/AppleVolumes.default
+   echo "- -tcp -noddp -uamlist uams_dhx.so,uams_dhx2.so -nosavepassword -mimicmodel MacPro6,1" >> /etc/netatalk/afpd.conf
+   echo "I will look like a 2013 Mac Pro in the Finder sidebar."
+else
+   echo "Not installing Netatalk."
+fi
+
 #Permissions for /var/www and Pi so Pi can write to /var/www without changing user
-chown www-data:www-data /var/www
-chmod 775 /var/www
+chown -R www-data:www-data /var/www
+chmod 775 -R /var/www
 usermod -a -G www-data pi
 chmod g+s /var/www
 
