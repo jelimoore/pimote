@@ -36,6 +36,7 @@ apt-get install lighttpd -y
 apt-get install php5-common php5-cgi php5 -y
 lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
+apt-get install php5-apc  -y
 
 #install samba for shares
 read -r -p "Would you like to install a Samba/SMB server? It makes it generously easier to manipulate files. (y/n) " response
