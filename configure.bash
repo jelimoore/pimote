@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Root check
 if [ "$EUID" -ne 0 ]
   then echo "Please re-run as root. Try sudo ./configure.bash"
   exit
@@ -13,6 +14,7 @@ echo "Installing LIRC"
 apt-get install lirc -y
 
 #LIRC kernel modules (kexts)
+echo "Adding LIRC kernel extensions"
 echo "lirc_dev" >> /etc/modules
 echo "lirc_rpi gpio_in_pin=18 gpio_out_pin=22" >> /etc/modules
 echo "dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=22" >> /boot/config.txt
