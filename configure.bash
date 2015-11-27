@@ -58,7 +58,16 @@ echo "Installing Netatalk."
 sudo apt-get install -y netatalk
 echo "/var/www	\"Web Root\"	allow:pi" >> /etc/netatalk/AppleVolumes.default
 echo "- -tcp -noddp -uamlist uams_dhx.so,uams_dhx2.so -nosavepassword -mimicmodel MacPro6,1" >> /etc/netatalk/afpd.conf
- echo "I will look like a 2013 Mac Pro in the Finder sidebar."
+echo "I will look like a 2013 Mac Pro in the Finder sidebar."
+ 
+#Installing ShairPort
+echo "Installing Shairport"
+git clone http://github.com/abrasive/shairport
+cd shairport
+apt-get install libssl-dev libavahi-client-dev libasound2-dev -y
+./configure
+make
+make install
 
 #Permissions for /var/www and Pi so Pi can write to /var/www without changing user, copying CSS, JS and fonts from Bootstrap
 cp -R www /var/www
