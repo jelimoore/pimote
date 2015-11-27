@@ -40,38 +40,25 @@ lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 apt-get install php5-apc  -y
 
-#install samba for shares
-read -r -p "Would you like to install a Samba/SMB server? It makes it generously easier to manipulate files. (y/n) " response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
-then
-   echo "Installing Samba."
-   sudo apt-get install -y samba
-   echo "#WWW Root Share" >> /etc/samba/smb.conf
-   echo "[Web Root]" >> /etc/samba/smb.conf
-   echo "comment = WWW Directory" >> /etc/samba/smb.conf
-   echo "path = /var/www" >> /etc/samba/smb.conf
-   echo "guest ok = no" >> /etc/samba/smb.conf
-   echo "browseable = yes" >> /etc/samba/smb.conf
-   echo "read only = no" >> /etc/samba/smb.conf
-   echo "force create mode = 0775" >> /etc/samba/smb.conf
-   echo "force directory mode = 0755" >> /etc/samba/smb.conf
-
-else
-   echo "Not installing Samba."
-fi
+#Samba and shares
+echo "Installing Samba."
+sudo apt-get install -y samba
+echo "#WWW Root Share" >> /etc/samba/smb.conf
+echo "[Web Root]" >> /etc/samba/smb.conf
+echo "comment = WWW Directory" >> /etc/samba/smb.conf
+echo "path = /var/www" >> /etc/samba/smb.conf
+echo "guest ok = no" >> /etc/samba/smb.conf
+echo "browseable = yes" >> /etc/samba/smb.conf
+echo "read only = no" >> /etc/samba/smb.conf
+echo "force create mode = 0775" >> /etc/samba/smb.conf
+echo "force directory mode = 0755" >> /etc/samba/smb.conf
 
 #Netatalk/AFP
-read -r -p "Would you like to install a Netatalk/AFP server? It makes it generously easier to manipulate files. (y/n) " response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
-then
-   echo "Installing Netatalk."
-   sudo apt-get install -y netatalk
-   echo "/var/www	\"Web Root\"	allow:pi" >> /etc/netatalk/AppleVolumes.default
-   echo "- -tcp -noddp -uamlist uams_dhx.so,uams_dhx2.so -nosavepassword -mimicmodel MacPro6,1" >> /etc/netatalk/afpd.conf
-   echo "I will look like a 2013 Mac Pro in the Finder sidebar."
-else
-   echo "Not installing Netatalk."
-fi
+echo "Installing Netatalk."
+sudo apt-get install -y netatalk
+echo "/var/www	\"Web Root\"	allow:pi" >> /etc/netatalk/AppleVolumes.default
+echo "- -tcp -noddp -uamlist uams_dhx.so,uams_dhx2.so -nosavepassword -mimicmodel MacPro6,1" >> /etc/netatalk/afpd.conf
+ echo "I will look like a 2013 Mac Pro in the Finder sidebar."
 
 #Permissions for /var/www and Pi so Pi can write to /var/www without changing user, copying CSS, JS and fonts from Bootstrap
 cp -R www /var/www
@@ -88,10 +75,6 @@ ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
 #wlan0 ip
 echo "My IP for wlan0 is:"
 ifconfig wlan0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
-
-#copying CSS, JS and fonts from Bootstrap
-cp -R www /var/www
-rm /var/www/index.lighttpd.html
 
 #ask to reboot
 read -r -p "Would you like to reboot now? (y/n) " response
