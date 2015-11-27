@@ -12,10 +12,10 @@ $page='
     <title>Whole Home Remote</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="/assets/css/navbar-fixed-top.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,13 +52,13 @@ $page='
 
     <div class="container">
      <p>
-       <a class="btn btn-success" href="?command=KEY_POWER">Power</a>  
-       <a class="btn btn-success" href="?command=KEY_VOLUMEUP">Volume Up</a>  
-       <a class="btn btn-success" href="?command=KEY_VOLUMEDOWN">Volume Down</a>  
-       <a class="btn btn-success" href="?command=KEY_TAPE">Use TV Audio</a>  
-       <a class="btn btn-success" href="?command=KEY_AUX">Use Aux Audio</a>  
-       <a class="btn btn-success" href="?command=KEY_CD">Listen to a CD</a>  
-       <a class="btn btn-success" href="?command=KEY_EJECTCD">Eject CD</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_POWER">Power</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_VOLUMEUP">Volume Up</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_VOLUMEDOWN">Volume Down</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_TAPE">Use TV Audio</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_AUX">Use AirPlay Audio</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_CD">Listen to a CD</a>  
+       <a class="btn btn-success btn-lg" href="?command=KEY_EJECTCD">Eject CD</a>  
      </p>
     </div> <!-- /container -->
 
@@ -67,11 +67,11 @@ $page='
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
 </html>';
 
-include 'functions.php';
+include 'assets/scripts/functions.php';
 
 if (isset($_GET['command'])){
 	irsend("STEREO", $_GET['command']);

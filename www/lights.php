@@ -12,10 +12,10 @@ $page='
     <title>Whole Home Remote</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="/assets/css/navbar-fixed-top.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,7 +52,10 @@ $page='
 
     <div class="container">
      <p>
-      This page is a work in pogress. Please come back later.
+      <a class="btn btn-success btn-lg btn-lg" href="?command=signon">RC Toy Sign On</a>
+      <a class="btn btn-success btn-lg btn-lg" href="?command=signoff">RC Toy Sign Off</a>
+      <a class="btn btn-success btn-lg btn-lg" href="?command=accenton">Accent Lights On</a>
+      <a class="btn btn-success btn-lg btn-lg" href="?command=accentoff">Accent Lights Off</a>
      </p>
     </div> <!-- /container -->
 
@@ -61,10 +64,32 @@ $page='
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
 </html>';
 
-include 'functions.php';
+include 'assets/scripts/functions.php';
+
 echo $page;
+
+$token = "b658f8321a7d4462a6b2f03d226d6632";
+
+if (isset($_GET['command'])) {
+	switch ($_GET['command']) {
+		case "signoff":
+			blynkWrite($token, "d", "7", "0");
+		break;
+		case "signon":
+			blynkWrite($token, "d", "7", "1");
+		break;
+		case "accentoff":
+			blynkWrite($token, "d", "2", "0");
+		break;
+		case "accenton":
+			blynkWrite($token, "d", "2", "1");
+		break;
+	}
+	
+}
+
 ?>

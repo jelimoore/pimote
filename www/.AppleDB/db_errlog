@@ -1,0 +1,49 @@
+No log files found
+Finding last valid log LSN: file: 1 offset 132230
+Recovery starting from [1][131790]
+Recovery complete at Sun Nov  8 01:18:52 2015
+Maximum transaction ID 8000007a Recovery checkpoint [1][132570]
+Finding last valid log LSN: file: 1 offset 140933
+Recovery starting from [1][140493]
+Recovery complete at Sun Nov  8 03:10:31 2015
+Maximum transaction ID 8000000d Recovery checkpoint [1][141273]
+Finding last valid log LSN: file: 1 offset 142801
+Recovery starting from [1][142313]
+Recovery complete at Mon Nov  9 23:30:03 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][142801]
+Finding last valid log LSN: file: 1 offset 144329
+Recovery starting from [1][143841]
+Recovery complete at Sat Nov 21 00:24:27 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][144329]
+Finding last valid log LSN: file: 1 offset 145857
+Recovery starting from [1][145369]
+Recovery complete at Sun Nov 22 02:18:45 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][145857]
+Finding last valid log LSN: file: 1 offset 149809
+Recovery starting from [1][149369]
+Recovery complete at Sun Nov 22 05:22:52 2015
+Maximum transaction ID 8000000b Recovery checkpoint [1][150149]
+Finding last valid log LSN: file: 1 offset 151245
+Recovery starting from [1][150805]
+Recovery complete at Mon Nov 23 00:05:45 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][151585]
+Finding last valid log LSN: file: 1 offset 153113
+Recovery starting from [1][152625]
+Recovery complete at Mon Nov 23 21:26:01 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][153113]
+Finding last valid log LSN: file: 1 offset 160625
+Recovery starting from [1][159321]
+Recovery complete at Wed Nov 25 15:10:38 2015
+Maximum transaction ID 8000000e Recovery checkpoint [1][160965]
+Finding last valid log LSN: file: 1 offset 162061
+Recovery starting from [1][161621]
+Recovery complete at Wed Nov 25 17:26:36 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][162401]
+Finding last valid log LSN: file: 1 offset 163929
+Recovery starting from [1][163441]
+Recovery complete at Fri Nov 27 00:20:59 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][163929]
+Finding last valid log LSN: file: 1 offset 165025
+Recovery starting from [1][164585]
+Recovery complete at Fri Nov 27 01:34:22 2015
+Maximum transaction ID 80000004 Recovery checkpoint [1][165365]

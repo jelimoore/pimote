@@ -1,5 +1,3 @@
-<?php
-$page='
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,10 +10,10 @@ $page='
     <title>Whole Home Remote</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="/assets/css/navbar-fixed-top.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,30 +50,41 @@ $page='
 
     <div class="container">
      <p>
-      <a class="btn btn-success" href="?command=KEY_POWER">Power</a>
-      <a class="btn btn-success" href="?command=KEY_VOLUMEUP">Volume Up</a>
-      <a class="btn btn-success" href="?command=KEY_VOLUMEDOWN">Volume Down</a>
-      <a class="btn btn-success" href="?command=KEY_MUTE">Mute</a>
-      <a class="btn btn-success" href="?command=KEY_LAST">Last</a>
-      <a class="btn btn-success" href="?command=KEY_CHANNELUP">Channel Up</a>
-      <a class="btn btn-success" href="?command=KEY_CHANNELDOWN">Channel Down</a>
-      <a class="btn btn-success" href="?command=KEY_I">Input</a>
-      <a class="btn btn-success" href="?command=KEY_T">TV</a>
-      <a class="btn btn-success" href="?command=KEY_A">AV</a>
-      <a class="btn btn-success" href="?command=KEY_C">Component</a>
-      <a class="btn btn-success" href="?command=KEY_H">HDMI</a>
-      <a class="btn btn-success" href="?command=KEY_1">1</a>
-      <a class="btn btn-success" href="?command=KEY_2">2</a>
-      <a class="btn btn-success" href="?command=KEY_3">3</a>
-      <a class="btn btn-success" href="?command=KEY_4">4</a>
-      <a class="btn btn-success" href="?command=KEY_5">5</a>
-      <a class="btn btn-success" href="?command=KEY_6">6</a>
-      <a class="btn btn-success" href="?command=KEY_7">7</a>
-      <a class="btn btn-success" href="?command=KEY_8">8</a>
-      <a class="btn btn-success" href="?command=KEY_9">9</a>
-      <a class="btn btn-success" href="?command=KEY_0">0</a>
-      <a class="btn btn-success" href="?command=KEY_MINUS">-</a>
-      <a class="btn btn-success" href="?command=KEY_INFO">Info</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_MUTE">Mute</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_LAST">Last</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_VOLUMEUP">Volume Up</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_VOLUMEDOWN">Volume Down</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_CHANNELUP">Channel Up</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_CHANNELDOWN">Channel Down</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_I">Input</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_T">TV</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_A">AV</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_C">Component</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_H">HDMI</a>
+      <div class="row">
+      <div class="col-md-1 col-xs-2"></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_POWER">Power</a></div>
+      </div>
+      <div class="row">
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_1">1</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_2">2</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_3">3</a></div>
+      </div>
+      <div class="row">
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_4">4</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_5">5</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_6">6</a></div>
+      </div>
+      <div class="row">
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_7">7</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_8">8</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_9">9</a></div>
+      </div>
+      <div class="row">
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_MINUS">-</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_0">0</a></div>
+      <div class="col-md-1 col-xs-2"><a class="btn btn-success btn-lg" href="?command=KEY_INFO">Info</a></div>
+      </div>
      </p>
     </div> <!-- /container -->
 
@@ -84,14 +93,14 @@ $page='
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
-</html>';
+</html>
 
-include 'functions.php';
+<?php
+include 'assets/scripts/functions.php';
 
 if (isset($_GET['command'])){
  irsend("TV", $_GET['command']);
 }
-echo $page;
 ?>

@@ -12,10 +12,10 @@ $page='
     <title>Whole Home Remote</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="/assets/css/navbar-fixed-top.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,15 +52,15 @@ $page='
 
     <div class="container">
      <p>
-      <a class="btn btn-success" href="?command=KEY_POWER">Power</a>
-      <a class="btn btn-success" href="?command=KEY_UP">Up</a>
-      <a class="btn btn-success" href="?command=KEY_DOWN">Down</a>
-      <a class="btn btn-success" href="?command=KEY_LEFT">Left</a>
-      <a class="btn btn-success" href="?command=KEY_RIGHT">Right</a>
-      <a class="btn btn-success" href="?command=KEY_ENTER">Select</a>
-      <a class="btn btn-success" href="?command=KEY_PLAYPAUSE">Play/Pause</a>
-      <a class="btn btn-success" href="?command=KEY_MENU">Menu</a>
-      <a class="btn btn-success" href="?command=KEY_STOP">Stop</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_POWER">Power</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_UP">Up</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_DOWN">Down</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_LEFT">Left</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_RIGHT">Right</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_ENTER">Select</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_PLAYPAUSE">Play/Pause</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_MENU">Menu</a>
+      <a class="btn btn-success btn-lg" href="?command=KEY_STOP">Stop</a>
      </p>
     </div> <!-- /container -->
 
@@ -69,11 +69,11 @@ $page='
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
 </html>';
 
-include 'functions.php';
+include 'assets/scripts/functions.php';
 
 if (isset($_GET['command'])){
 	irsend("DVD", $_GET['command']);
