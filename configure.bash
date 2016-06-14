@@ -20,7 +20,7 @@ echo "lirc_rpi gpio_in_pin=18 gpio_out_pin=22" >> /etc/modules
 echo "dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=22" >> /boot/config.txt
 
 #asking for overclock
-read -r -p "Would you like to overclock now (900mHz)? Please don't if you already have. (y/n) " response
+read -r -p "Would you like to overclock now (900mHz)? Please don't say yes if you already have. (y/n) " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
     echo "Overclocking to 900MHz..."
